@@ -12,6 +12,8 @@
 #include "esp_chip_info.h"
 #include "esp_flash.h"
 
+#include "flow3r_bsp.h"
+
 void app_main(void)
 {
     printf("Hello world!\n");
@@ -39,6 +41,10 @@ void app_main(void)
            (chip_info.features & CHIP_FEATURE_EMB_FLASH) ? "embedded" : "external");
 
     printf("Minimum free heap size: %" PRIu32 " bytes\n", esp_get_minimum_free_heap_size());
+
+    flow3r_bsp_leds_init();
+    flow3r_bsp_leds_set_pixel(1, 255, 0, 0);
+    flow3r_bsp_leds_refresh(100);
 
     for (int i = 10; i >= 0; i--) {
         printf("Restarting in %d seconds...\n", i);
