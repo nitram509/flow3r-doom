@@ -43,7 +43,9 @@ void app_main(void)
     printf("Minimum free heap size: %" PRIu32 " bytes\n", esp_get_minimum_free_heap_size());
 
     flow3r_bsp_leds_init();
-    flow3r_bsp_leds_set_pixel(1, 255, 0, 0);
+    for(int i =0; i<40; i++) {
+        flow3r_bsp_leds_set_pixel(i, 63, 255, 33 );
+    }
     flow3r_bsp_leds_refresh(100);
 
     for (int i = 10; i >= 0; i--) {
