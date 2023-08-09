@@ -1,2 +1,2 @@
-idf_component_register(SRCS "hello_world_main.c"
+idf_component_register(SRCS "go_green_main.c"
                     INCLUDE_DIRS "")

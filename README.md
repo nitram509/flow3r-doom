@@ -1,25 +1,21 @@
-| Supported Targets | ESP32 | ESP32-C2 | ESP32-C3 | ESP32-C6 | ESP32-H2 | ESP32-S2 | ESP32-S3 |
-| ----------------- | ----- | -------- | -------- | -------- | -------- | -------- | -------- |
+| Supported Targets | ESP32-S3/flow3r
+| ----------------- | --------------- |
 
-# Hello World Example
+# flow3r Hello World Example
 
-Starts a FreeRTOS task to print "Hello World".
-
-(See the README.md file in the upper level 'examples' directory for more information about examples.)
+Starts a FreeRTOS task to turn on all LEDs
 
 ## How to use example
 
-Follow detailed instructions provided specifically for this example.
-
-Select the instructions depending on Espressif chip installed on your development board:
-
-- [ESP32 Getting Started Guide](https://docs.espressif.com/projects/esp-idf/en/stable/get-started/index.html)
-- [ESP32-S2 Getting Started Guide](https://docs.espressif.com/projects/esp-idf/en/latest/esp32s2/get-started/index.html)
-
+- Install ESP IDF 5.1 (ideally with FPU patch backported, see flow3r docs)
+- Run `git submodule update`
+- Run `idf.py build` to build
+- Run `idf.py app-flash` to flash the app without touching flow3r bootloader and recovery
+- Copy `build/Go_Green.bin` to flow3r's internal flash or SD card to flash via recovery mode
 
 ## Example folder contents
 
-The project **hello_world** contains one source file in C language [hello_world_main.c](main/hello_world_main.c). The file is located in folder [main](main).
+The project **go_green** contains one source file in C language [go_green_main.c](main/go_green_main.c). The file is located in folder [main](main).
 
 ESP-IDF projects are built using CMake. The project build configuration is contained in `CMakeLists.txt` files that provide set of directives and instructions describing the project's source files and targets (executable, library, or both).
 
@@ -27,10 +23,9 @@ Below is short explanation of remaining files in the project folder.
 
 ```
 ├── CMakeLists.txt
-├── pytest_hello_world.py      Python script used for automated testing
 ├── main
 │   ├── CMakeLists.txt
-│   └── hello_world_main.c
+│   └── go_green_main.c
 └── README.md                  This is the file you are currently reading
 ```
 
@@ -41,7 +36,6 @@ For more information on structure and contents of ESP-IDF projects, please refer
 * Program upload failure
 
     * Hardware connection is not correct: run `idf.py -p PORT monitor`, and reboot your board to see if there are any output logs.
-    * The baud rate for downloading is too high: lower your baud rate in the `menuconfig` menu, and try again.
 
 ## Technical support and feedback
 
