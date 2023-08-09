@@ -1,9 +1,16 @@
 | Supported Targets | ESP32-S3/flow3r
 | ----------------- | --------------- |
 
-# flow3r Hello World Example
+# flow3r "Go Green" Example
 
-Starts a FreeRTOS task to turn on all LEDs
+This demo project shows how to build an ESP IDF project that can be used to port existing ESP32-S3
+software to the flow3r. This is useful if you have an application that does not fit in the default
+flow3r application framework, which is based on MicroPython.
+
+Binaries created with this template can be run by selecting them in flow3r's recovery mode. They
+will replace the default flow3r application in that case.
+
+This demo starts a FreeRTOS task and turns on all LEDs to "Go Green".
 
 ## How to use example
 
