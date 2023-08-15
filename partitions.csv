@@ -1,11 +1,1 @@
-# Note: this is a simplified partition table, the real one lives in
-# recovery/partitions.csv. If you flash this project fully, you will end up
-# with a badge with no recovery app! Instead, always use `idf.py app-flash`
-# here, and first do `idf.py erase_flash flash` in the recovery subfolder.
-
-# Name,   Type, SubType, Offset,  Size, Flags
-nvs,      data, nvs,     0x9000,  0x6000,
-phy_init, data, phy,     0xf000,  0x1000,
-# 512KiB gap for recovery app. 
-app,      app,  factory, 0x90000, 0x300000,
-vfs,      data, fat,     0x390000, 0xc70000,
+flow3r/partitions.csv
