@@ -13,6 +13,25 @@ idf_component_register(
         ./include
     REQUIRES
         prboom
+        driver
+        esp_partition
+        spi_flash
 )
 
-target_compile_options(${COMPONENT_LIB} PRIVATE -Wno-error)
+target_compile_options(${COMPONENT_LIB} PRIVATE
+    -Wno-error=maybe-uninitialized
+    -Wno-error=misleading-indentation
+    -Wno-error=stringop-truncation
+    -Wno-error=char-subscripts
+    -Wno-error=unused-const-variable=
+    -Wno-error=unused-value
+    -Wno-error=pointer-sign
+    -Wno-error=duplicate-decl-specifier
+    -Wno-error=unused-but-set-parameter
+    -Wno-error=parentheses
+    -Wno-error=nonnull
+    -Wno-error=dangling-else
+    -Wno-error=sizeof-pointer-div
+    -Wno-error=format-overflow=
+    -Wno-error=implicit-function-declaration
+)
