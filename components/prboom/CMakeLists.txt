@@ -70,7 +70,16 @@ idf_component_register(
         wi_stuff.c 
         z_bmalloc.c 
         z_zone.c
+        ./native/i_joy.c 
+        ./native/i_main.c 
+        ./native/i_network.c 
+        ./native/i_sound.c 
+        ./native/i_system.c 
+        ./native/i_video.c
     INCLUDE_DIRS
         .
         ./include
+        ./native/include
 )
+
+target_compile_options(${COMPONENT_LIB} PRIVATE -Wno-error)
