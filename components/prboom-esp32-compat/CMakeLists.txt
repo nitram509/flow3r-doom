@@ -11,6 +11,8 @@ idf_component_register(
     INCLUDE_DIRS
         .
         ./include
+    REQUIRES
+        prboom
 )
 
 target_compile_options(${COMPONENT_LIB} PRIVATE -Wno-error)
