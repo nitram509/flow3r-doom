@@ -80,6 +80,8 @@ idf_component_register(
         .
         ./include
         ./native/include
+    REQUIRES
+        prboom-wad-tables
 )
 
 target_compile_options(${COMPONENT_LIB} PRIVATE
@@ -95,4 +97,6 @@ target_compile_options(${COMPONENT_LIB} PRIVATE
     -Wno-error=parentheses
     -Wno-error=nonnull
     -Wno-error=dangling-else
-    )
+    -Wno-error=sizeof-pointer-div
+    -Wno-error=format-overflow=
+)
