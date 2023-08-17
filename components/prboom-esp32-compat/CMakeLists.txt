@@ -16,6 +16,7 @@ idf_component_register(
         driver
         esp_partition
         spi_flash
+        heap
 )
 
 target_compile_options(${COMPONENT_LIB} PRIVATE
