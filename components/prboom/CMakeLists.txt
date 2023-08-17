@@ -82,4 +82,4 @@ idf_component_register(
         ./native/include
 )
 
-target_compile_options(${COMPONENT_LIB} PRIVATE -Wno-error)
+target_compile_options(${COMPONENT_LIB} PRIVATE -Wno-error=maybe-uninitialized)
