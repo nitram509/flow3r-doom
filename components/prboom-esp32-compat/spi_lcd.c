@@ -21,7 +21,7 @@
 #include "driver/spi_master.h"
 #include "soc/gpio_struct.h"
 #include "driver/gpio.h"
-#include "esp_heap_alloc_caps.h"
+#include "esp_heap_caps_init.h"
 
 #include "sdkconfig.h"
 

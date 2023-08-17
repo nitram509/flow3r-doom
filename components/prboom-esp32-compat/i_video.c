@@ -55,7 +55,8 @@
 #include "rom/ets_sys.h"
 #include "spi_lcd.h"
 
-#include "esp_heap_alloc_caps.h"
+#include "esp_heap_caps_init.h"
+
 
 int use_fullscreen=0;
 int use_doublebuffer=0;
