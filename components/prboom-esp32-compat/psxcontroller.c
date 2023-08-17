@@ -76,7 +76,7 @@ static int psxSendRecv(int send) {
 
 static void psxDone() {
 	DELAY();
-	GPIO_REG_WRITE(RTC_GPIO_OUT_W1TS_REG, (1<<PSX_ATT));
+	REG_WRITE(RTC_GPIO_OUT_W1TS_REG, (1<<PSX_ATT));
 }
 
 
@@ -116,7 +116,7 @@ void psxcontrollerInit() {
 	gpio_config(&gpioconf[0]);
 	gpio_config(&gpioconf[1]);
 	
-	PIN_PULLUP_EN(PERIPHS_IO_MUX_GPIO27_U);
+	PIN_PULLUP_EN(GPIO_NUM_27);
 	//Send a few dummy bytes to clean the pipes.
 	psxSendRecv(0);
 	psxDone();
