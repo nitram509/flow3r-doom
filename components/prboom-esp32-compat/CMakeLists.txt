@@ -15,8 +15,10 @@ idf_component_register(
         prboom
         driver
         esp_partition
+        freertos
         spi_flash
         heap
+        xtensa
 )
 
 target_compile_options(${COMPONENT_LIB} PRIVATE

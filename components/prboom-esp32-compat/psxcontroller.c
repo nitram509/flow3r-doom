@@ -25,6 +25,9 @@
 
 #include "sdkconfig.h"
 
+#include "soc/soc_ulp.h"
+#include "soc/rtc_io_reg.h"
+
 #define PSX_CLK CONFIG_HW_PSX_CLK
 #define PSX_DAT CONFIG_HW_PSX_DAT
 #define PSX_ATT CONFIG_HW_PSX_ATT
@@ -73,7 +76,7 @@ static int psxSendRecv(int send) {
 
 static void psxDone() {
 	DELAY();
-	GPIO_REG_WRITE(GPIO_OUT_W1TS_REG, (1<<PSX_ATT));
+	GPIO_REG_WRITE(RTC_GPIO_OUT_W1TS_REG, (1<<PSX_ATT));
 }
 
 
@@ -101,13 +104,13 @@ void psxcontrollerInit() {
 			.mode=GPIO_MODE_OUTPUT, 
 			.pull_up_en=GPIO_PULLUP_DISABLE, 
 			.pull_down_en=GPIO_PULLDOWN_DISABLE, 
-			.intr_type=GPIO_PIN_INTR_DISABLE
+			.intr_type=GPIO_INTR_DISABLE
 		},{
 			.pin_bit_mask=(1<<PSX_DAT), 
 			.mode=GPIO_MODE_INPUT, 
 			.pull_up_en=GPIO_PULLUP_ENABLE, 
 			.pull_down_en=GPIO_PULLDOWN_DISABLE, 
-			.intr_type=GPIO_PIN_INTR_DISABLE
+			.intr_type=GPIO_INTR_DISABLE
 		}
 	};
 	gpio_config(&gpioconf[0]);
